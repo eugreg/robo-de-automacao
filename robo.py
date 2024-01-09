@@ -29,7 +29,7 @@ pyautogui.press("enter")
 #salvar dados
 for linhas in tabela.index:
     #salavar codigo
-    pyautogui.press("tab")
+    pyautogui.click(x=1151, y=254)
     pyautogui.write(tabela.loc[linhas, "codigo"])
 
     #salvar marca
