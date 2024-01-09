@@ -6,9 +6,9 @@ link = "https://dlp.hashtagtreinamentos.com/python/intensivao/login"
 tabela = pandas.read_csv("produtos.csv")
 
 #tempo de pausa
-pyautogui.PAUSE = 1
+pyautogui.PAUSE = 0.5
 
-#entrar no GOOGLE CHROME
+#entrar no GOOGLE CHROMEMOLO000251  Logitech    Mouse   1   25.95   6.5
 pyautogui.press("win") 
 pyautogui.write("chrome")
 pyautogui.press("enter")
@@ -35,29 +35,32 @@ for linhas in tabela.index:
     #salvar marca
 
     pyautogui.press("tab")
-    pyautogui.write("marca")
+    pyautogui.write(tabela.loc[linhas, "marca"])
 
     #salvar tipo
 
     pyautogui.press("tab")
-    pyautogui.write("tipo")
+    pyautogui.write(tabela.loc[linhas, "tipo"])
 
     #salvar categoria
 
     pyautogui.press("tab")
-    pyautogui.write("categoria")
+    pyautogui.write(str(tabela.loc[linhas, "categoria"]))
 
     #salvar preco
     pyautogui.press("tab")
-    pyautogui.write("preco_unitario")
+    pyautogui.write(str(tabela.loc[linhas, "preco_unitario"]))
 
     #salvar custo
     pyautogui.press("tab")
-    pyautogui.write("custo")
+    pyautogui.write(str(tabela.loc[linhas, "custo"]))
 
     #salvar onbs
     pyautogui.press("tab")
-    pyautogui.write("observacoes")
+    obs = tabela.loc[linhas, "obs"]
+    if not pandas.isna(obs):
+        pyautogui.write(obs)
+    
 
     #salvar
     pyautogui.press("tab")  
