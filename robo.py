@@ -16,7 +16,7 @@ pyautogui.press("enter")
 #entrar no link
 pyautogui.write(link)
 pyautogui.press("enter")
-set.time(5)
+time.sleep(5)
 
 #login
 pyautogui.press("tab")
