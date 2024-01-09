@@ -1,5 +1,6 @@
 import pyautogui
 import pandas
+import time
 
 link = "https://dlp.hashtagtreinamentos.com/python/intensivao/login"
 tabela = pandas.read_csv("produtos.csv")
